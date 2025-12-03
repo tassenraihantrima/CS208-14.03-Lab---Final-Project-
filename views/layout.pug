@@ -1,7 +1,27 @@
 doctype html
-html
+html(lang="en")
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title #{title}
+    link(rel="stylesheet", href="/stylesheets/style.css")
   body
-    block content
+    header.site-header.bg-dark-green
+      nav.nav
+        a.logo(href="/")
+          span.brand-script.logo-title Downtown Donuts
+          span.logo-sub Since 1992
+        ul.nav-links
+          li: a(href="/") Home
+          li: a(href="/menu") Menu
+          li: a(href="/about") About
+          li: a(href="/comments") Comments
+
+    main
+      block content
+
+    footer.site-footer
+      .footer-inner
+        span &copy; #{new Date().getFullYear()} Downtown Donuts
+        span.footer-dot •
+        span Small-batch donuts & coffee, serving downtown since 1992

@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  section.section
+    .section-inner.section-split
+        .section-text
+            h1.section-title Customer Comments
+            p.section-subtitle Leave a note for the Downtown Donuts team.
+
+            if comments && comments.length
+                ul.comment-list
+                    each c in comments
+                        li.comment
+                            h3.comment-name= c.name
+                            span.comment-date= c.date
+                            p.comment-message= c.message
+            else
+                p.section-subtle No comments yet. Be the first to say hello!
+
+        .section-panel
+            h2.section-panel-title Leave a Comment
+            form.comment-form(method="POST", action="/comments")
+                label.form-label(for="name") Name
+                input#name.form-input(type="text", name="name", required)
+
+                label.form-label(for="message") Comment
+                textarea#message.form-textarea(name="message", rows="4", required)
+
+                button.btn.btn-primary(type="submit") Post Comment

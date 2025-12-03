@@ -1,23 +1,27 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  ol
-  each val in todos
-    li
-      span= val.task + ' - '
-      if val.completed > 0
-        span Completed
-      else
-        pan Not Completed
-      form(method='POST' action='/delete')
-        input(type='hidden', name='id', value=val.id)
-        button(type='submit') Delete
+    section.hero.bg-dark-green
+      .hero-inner
+        h1.brand-script.hero-title Downtown Donuts
+        p.hero-subtitle Cozy, minimal, modern donuts & coffee since 1992.
+        .accent-line
+        .hero-cta
+          a.btn.btn-primary(href="/menu") View Menu
+          a.btn.btn-outline(href="https://www.ubereats.com" target="_blank") Order on UberEats
+          a.btn.btn-outline(href="https://www.doordash.com" target="_blank") Order on DoorDash
 
-  hr
-  h2 Add a new task
-  form(method='POST' action='/create')
-    label(for='task') Task:
-    input(type='text', name='task', id='task', required)
-    button(type='submit') Create Task
+    section.section
+      .section-inner
+        h2.section-title Our Favorites
+        p.section-subtitle A sample of what you’ll find in our cases each morning.
+        .card-grid
+          .card
+            h3.card-title Maple Old-Fashioned
+            p.card-text Small-batch maple glaze over a crispy, golden old-fashioned donut.
+          .card
+            h3.card-title Espresso Glazed
+            p.card-text Our house espresso folded into a not-too-sweet glaze.
+          .card
+            h3.card-title Seasonal Feature
+            p.card-text Rotating flavors inspired by local ingredients and holidays.
