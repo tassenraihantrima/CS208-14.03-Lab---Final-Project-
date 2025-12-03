@@ -360,3 +360,9 @@ main {
 .footer-dot {
   margin: 0 0.4rem;
 }
+
+.hero-logo-mark {
+  max-width: 220px;
+  margin: 0 auto 1.5rem;
+  display: block;
+}
